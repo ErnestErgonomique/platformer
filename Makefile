@@ -22,13 +22,13 @@ all: $(TARGET)
 
 # Règle pour créer l'exécutable
 $(TARGET): $(OBJECTS)
-	@mkdir -p $(BUILD_DIR)  # Créer le répertoire de l'exécutable s'il n'existe pas
+	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LIBS) -o $@
 
 # Règle pour compiler les fichiers .cpp en fichiers .o
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%/*.cpp
-	@mkdir -p $(BUILD_DIR)  # S'assurer que le répertoire build existe
-	$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@  # Compiler le fichier source
+	@mkdir -p $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
 
 # Cible de nettoyage
 clean:
