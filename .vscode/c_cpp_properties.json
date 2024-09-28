@@ -3,7 +3,8 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/src", 
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/include",
                 "D:/Program Files/SFML-2.6.1/include"
             ],
             "defines": [],
