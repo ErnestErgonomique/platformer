@@ -1,7 +1,7 @@
 # Définir le compilateur et les options
 CXX := g++
-INCS := -Iinclude -ID:/Program\ Files/SFML-2.6.1/include
-LIBS := -LD:/Program\ Files/SFML-2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
+INCS := -Iinclude -Iinclude/SFML
+LIBS := -Llib/SFML -lsfml-graphics -lsfml-window -lsfml-system
 CXXFLAGS := -Wall -g
 
 # Définir les répertoires
