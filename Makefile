@@ -1,6 +1,8 @@
 # Définir le compilateur et les options
 CXX := g++
-CXXFLAGS := -Wall -g -Iinclude
+INCS := -Iinclude -ID:/Program\ Files/SFML-2.6.1/include
+LIBS := -LD:/Program\ Files/SFML-2.6.1/lib -lsfml-graphics -lsfml-window -lsfml-system
+CXXFLAGS := -Wall -g
 
 # Définir les répertoires
 SRC_DIR := src
@@ -21,13 +23,12 @@ all: $(TARGET)
 # Règle pour créer l'exécutable
 $(TARGET): $(OBJECTS)
 	@mkdir -p $(BUILD_DIR)  # Créer le répertoire de l'exécutable s'il n'existe pas
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LIBS) -o $@
 
 # Règle pour compiler les fichiers .cpp en fichiers .o
-# Notez que nous devons extraire le nom du fichier de source de la variable $< pour cette règle.
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%/*.cpp
 	@mkdir -p $(BUILD_DIR)  # S'assurer que le répertoire build existe
-	$(CXX) $(CXXFLAGS) -c $< -o $@  # Compiler le fichier source
+	$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@  # Compiler le fichier source
 
 # Cible de nettoyage
 clean:

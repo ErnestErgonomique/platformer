@@ -7,7 +7,7 @@
                 "D:/Program Files/SFML-2.6.1/include"
             ],
             "defines": [],
-            "compilerPath": "D:/Program Files/msys64/ucrt64/bin/g++.exe",
+            "compilerPath": "D:/Program Files/msys64/mingw64/bin/g++.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
