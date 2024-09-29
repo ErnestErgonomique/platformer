@@ -1,5 +1,12 @@
 {
     "files.associations": {
         "iostream": "cpp"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "d:\\Programmation\\C++\\projets\\platformer\\build",
+            "binaryPath": "d:\\Programmation\\C++\\projets\\platformer\\build\\game.exe",
+            "binaryArgs": []
+        }
+    ]
 }

@@ -5,10 +5,10 @@
             "includePath": [
                 "${workspaceFolder}/src",
                 "${workspaceFolder}/include",
-                "D:/Program Files/SFML-2.6.1/include"
+                "${workspaceFolder}/include/SFML"
             ],
             "defines": [],
-            "compilerPath": "D:/Program Files/msys64/mingw64/bin/g++.exe",
+            "compilerPath": "D:/Program Files/msys64/mingw64/bin/g++.exe",  // à changer en fonction du pc
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "gcc-x64"
