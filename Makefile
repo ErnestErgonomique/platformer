@@ -24,6 +24,7 @@ all: $(TARGET)
 $(TARGET): $(OBJECTS)
 	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LIBS) -o $@
+	@rm $(OBJECTS)
 
 # Règle pour compiler les fichiers .cpp en fichiers .o
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%/*.cpp
