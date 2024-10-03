@@ -18,7 +18,7 @@ OBJECTS := $(addprefix $(BUILD_DIR)/,$(notdir $(SOURCES:.cpp=.o)))
 TARGET := $(BUILD_DIR)/game.exe
 
 # Cible par défaut
-all: $(TARGET)
+all: $(TARGET) copy-assets
 
 # Règle pour créer l'exécutable
 $(TARGET): $(OBJECTS)
@@ -30,6 +30,10 @@ $(TARGET): $(OBJECTS)
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%/*.cpp
 	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
+
+# Règle pour copier les assets dans build/assets
+copy-assets:
+	@cp -r assets/ $(BUILD_DIR)
 
 # Cible de nettoyage
 clean:
