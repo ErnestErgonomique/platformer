@@ -27,7 +27,7 @@ $(TARGET): $(OBJECTS)
 	@rm $(OBJECTS)
 
 # Règle pour compiler les fichiers .cpp en fichiers .o
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%/*.cpp
+$(BUILD_DIR)/%.o: $(SRC_DIR)/**/%.cpp
 	@mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
 
