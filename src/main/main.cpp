@@ -1,7 +1,12 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 
+#include "soupe.hpp"
+
 int main() {
+
+    Soupe soupe("soupe");
+    std::cout << soupe.getName() << std::endl;
 
     sf::Texture texture;
     if (!texture.loadFromFile("assets/mecha_arbre.png")) {
