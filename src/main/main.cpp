@@ -4,7 +4,7 @@
 
 #include "soupe.hpp"
 
-// get system time in nanoseconds
+// gets system time in nanoseconds
 long long nanoTime() {
     return std::chrono::duration_cast<std::chrono::nanoseconds>(
         std::chrono::high_resolution_clock::now().time_since_epoch()
@@ -74,6 +74,7 @@ int main() {
                 if (coords[0] >= width) spriteDirection = -1;
                 break;
             }
+            
             window.clear();
             window.draw(sprite);
             window.display();
