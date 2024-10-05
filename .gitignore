@@ -1,5 +1,5 @@
 build/
 Makefile
 .vscode/
-lib/
+lib/SFML/
 include/SFML/
