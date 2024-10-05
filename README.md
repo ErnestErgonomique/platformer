@@ -18,6 +18,25 @@ This projects is only set for Windows at the moment
 - MinGW64
 - C++ 11 or above
 - SFML
+
+To install MinGW I recommand using MSYS2 you can easily find it on the internet.
+
+Once you got MSYS2, choose and open the MinGW64 terminal and type these
+commands :
+> pacman -S mingw-w64-x86_64-gcc
+
+> pacman -S mingw-w64-x86_64-gdb
+
+> pacman -S mingw-w64-x86_64-make
+
+You can verify if your compiler, debugger and make are installed by typing these
+commands :
+> g++ --version
+
+> gdb --version
+
+> make --version
+
 #### Installation
 - git clone the projet in a safe directory
 - create a /lib/SFML/ folder and copy-paste the lib/ folder content from your
