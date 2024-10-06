@@ -1,7 +1,7 @@
 # Définir le compilateur et les options
 CXX := g++
 INCS := -Iinclude -Iinclude/SFML
-LIBS := -Llib/SFML -lsfml-graphics -lsfml-window -lsfml-system
+LIBS := -Llib/SFML -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 CXXFLAGS := -Wall -g
 
 # Définir les répertoires
