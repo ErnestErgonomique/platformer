@@ -35,7 +35,8 @@ int main() {
 
     // renderwindow test
     sf::RenderWindow window(sf::VideoMode(width * 2, heigt), "Super fenetre");
-
+    // there's a way to make game speed dependent from time instead of framerate
+    // but it's a little complicated
     window.setFramerateLimit(60);
 
     while (window.isOpen()) {
