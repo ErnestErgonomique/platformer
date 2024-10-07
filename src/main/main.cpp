@@ -38,6 +38,7 @@ int main() {
     // there's a way to make game speed dependent from time instead of framerate
     // but it's a little complicated
     window.setFramerateLimit(60);
+    window.setVerticalSyncEnabled(true);
 
     while (window.isOpen()) {
         sf::Event event;
