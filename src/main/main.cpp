@@ -4,13 +4,6 @@
 
 #include "soupe.hpp"
 
-// gets system time in nanoseconds
-long long nanoTime() {
-    return std::chrono::duration_cast<std::chrono::nanoseconds>(
-        std::chrono::high_resolution_clock::now().time_since_epoch()
-    ).count();
-}
-
 int main() {
     // classes test
     Soupe soupe("soupe");
@@ -29,12 +22,12 @@ int main() {
 
     sf::FloatRect dimensions = sprite.getGlobalBounds();
     float width = dimensions.width;
-    float heigt = dimensions.height;
+    float heigth = dimensions.height;
 
     int spriteDirection = 1;
 
     // renderwindow test
-    sf::RenderWindow window(sf::VideoMode(width * 2, heigt), "Super fenetre");
+    sf::RenderWindow window(sf::VideoMode(width * 2, heigth), "Super fenetre");
     // there's a way to make game speed dependent from time instead of framerate
     // but it's a little complicated
     window.setFramerateLimit(60);
