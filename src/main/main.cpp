@@ -53,7 +53,7 @@ int main() {
             if (sprite.getPosition().x >= width) spriteDirection = -1;
             break;
         }
-        
+
         window.clear();
         window.draw(sprite);
         window.display();
