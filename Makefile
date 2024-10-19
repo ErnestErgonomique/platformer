@@ -22,18 +22,26 @@ all: $(TARGET) copy-assets
 
 # Règle pour créer l'exécutable
 $(TARGET): $(OBJECTS)
+	@echo "Linking $(notdir $@)"
 	@mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $(OBJECTS) $(LIBS) -o $@
+	@$(CXX) $(CXXFLAGS) $(OBJECTS) $(LIBS) -o $@
 	@rm $(OBJECTS)
 
 # Règle pour compiler les fichiers .cpp en fichiers .o
 $(BUILD_DIR)/%.o: $(SRC_DIR)/**/%.cpp
+	@echo "Compiling file : $(notdir $<)"
 	@mkdir -p $(BUILD_DIR)
-	$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) $(INCS) -c $< -o $@
 
 # Règle pour copier les assets dans build/assets
 copy-assets:
-	@cp -r assets/ $(BUILD_DIR)
+	@if [ -d assets ]; then \
+        mkdir -p $(BUILD_DIR)/assets; \
+        echo "Copying assets..."; \
+        cp -r assets/* $(BUILD_DIR)/assets; \
+    else \
+        echo "No assets directory found. Skipping."; \
+    fi
 
 # Cible de nettoyage
 clean:
