@@ -9,12 +9,11 @@ class Game {
 private:
     Window* gameWindow = nullptr;
     Renderer* renderer = nullptr;
-    sf::Texture temporaryTexture;
-    sf::Sprite temporarySprite;
+    std::vector<Player*> objects;
 public:
     Game();
     ~Game();
     Window* getWindow();
-    sf::Sprite& getTemporarySprite();
+    void init();
     void run();
 };

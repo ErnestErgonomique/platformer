@@ -3,24 +3,25 @@
 Game::Game() {
     this->gameWindow = new Window();
     this->renderer = new Renderer(this);
-    if (!this->temporaryTexture.loadFromFile("assets/mecha_arbre.png")) {
-        std::cerr << "Error while trying to load image" << std::endl;
-    }
-    this->temporarySprite.setTexture(this->temporaryTexture);
-    this->temporarySprite.setScale(0.1f, 0.1f);
 }
 
 Game::~Game() {
     delete renderer;
     delete gameWindow;
+    for (Player* player : this->objects) {
+        delete player;
+    }
 }
 
 Window* Game::getWindow() {
     return this->gameWindow;
 }
 
-sf::Sprite& Game::getTemporarySprite() {
-    return this->temporarySprite;
+void Game::init() {
+    objects.push_back(new Player());
+    for (Player* player : objects) {
+        this->renderer->add(player);
+    }
 }
 
 void Game::run() {
@@ -33,6 +34,9 @@ void Game::run() {
             }
         }
 
+        for (Player* player : objects) {
+            player->update();
+        }
         this->renderer->render();
     }
 }

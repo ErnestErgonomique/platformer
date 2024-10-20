@@ -5,8 +5,14 @@ Renderer::Renderer(Game* game) {
     this->game = game;
 }
 
+void Renderer::add(Player* player) {
+    this->objects.push_back(player);
+}
+
 void Renderer::render() {
     game->getWindow()->clear();
-    game->getWindow()->draw(game->getTemporarySprite());
+    for (Player* player : objects) {
+        game->getWindow()->draw(player->getSprite());
+    }
     game->getWindow()->display();
 }

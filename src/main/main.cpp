@@ -1,7 +1,8 @@
 #include "game.hpp"
 
 int main() {
-    Game* game = new Game();
-    game->run();
+    Game game;
+    game.init();
+    game.run();
     return 0;
 }
